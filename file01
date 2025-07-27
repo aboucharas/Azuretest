@@ -1,6 +1,26 @@
-git init
-git add .
-git commit -m "Initial Azure static web app"
-git branch -M main
-git remote add origin https://github.com/yourusername/your-repo.git
-git push -u origin main
+import { useState } from "react";
+
+export default function Home() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <main className="min-h-screen bg-gray-100 flex flex-col items-center justify-center text-center p-4">
+      <h1 className="text-4xl font-bold mb-4 text-blue-600">🚀 Azure Static Web App</h1>
+      <p className="text-lg mb-6">This is a demo React + Tailwind site ready to deploy on Azure.</p>
+
+      <div className="bg-white rounded-xl shadow-lg p-6">
+        <p className="text-gray-700 mb-4">Click Count: {count}</p>
+        <button
+          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+          onClick={() => setCount(count + 1)}
+        >
+          Click Me
+        </button>
+      </div>
+
+      <footer className="mt-10 text-sm text-gray-500">
+        Built with React + Tailwind — Deploy to Azure Static Web Apps
+      </footer>
+    </main>
+  );
+}
